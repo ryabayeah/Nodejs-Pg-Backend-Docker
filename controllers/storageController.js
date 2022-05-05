@@ -23,7 +23,7 @@ class storageController {
             const {url} = req.body;
             const row = await db.Storage.findOne({where: {user_id: req.user.id, url, type}});
             if (row)
-                return {status: false, message: 'Already exists'};
+                return res.status(400).json({status: false, message: 'Already exists'});
             const newRow = await db.Storage.create({
                 user_id: req.user.id,
                 url: url,
