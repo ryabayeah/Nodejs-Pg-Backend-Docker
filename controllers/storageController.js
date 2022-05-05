@@ -16,7 +16,6 @@ class storageController {
     }
 
     async createUserStorageRow(req, res, type) {
-        console.log("*****************1*************")
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty())
@@ -38,7 +37,6 @@ class storageController {
     }
 
     async deleteUserStorageRow(req, res) {
-        console.log("**************2****************")
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty())
@@ -53,7 +51,6 @@ class storageController {
     }
 
     async getUserStorageRow(req, res) {
-        console.log("*************3*****************")
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) return res.status(400).json({message: "Get storage row error", errors});
@@ -67,7 +64,6 @@ class storageController {
     }
 
     async getUserStorageRows(req, res, type) {
-        console.log("*************4*****************")
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) return res.status(400).json({message: "Get storage rows error", errors});
