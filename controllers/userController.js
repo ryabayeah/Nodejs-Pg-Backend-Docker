@@ -7,7 +7,7 @@ class UserController {
             const users = await db.User.findAll()
             res.json(users)
         } catch(err) {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json({state: false, message: err});
         }
     }
     async getUser(req, res) {
@@ -25,7 +25,7 @@ class UserController {
                     }
                 })
         } catch(err) {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json({state: false, message: err});
         }
     }
 
@@ -37,7 +37,7 @@ class UserController {
                 status: true,
                 message: "User successfully updated"})
         } catch(err) {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json({state: false, message: err});
         }
     }
 
@@ -46,7 +46,7 @@ class UserController {
             const user = db.User.destroy({where: {id: req.user.id}})
             res.json({status: true, message: "User successfully deleted"})
         } catch(err) {
-            res.status(500).send(JSON.stringify(err));
+            res.status(500).json({state: false, message: err});
         }
     }
 

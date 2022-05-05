@@ -40,7 +40,7 @@ class authController {
                     }})
         } catch (e) {
         console.log(e)
-            res.status(400).json({status: false, message: 'Registration error'})
+            res.status(500).json({status: false, message: 'Registration error'})
         }
     }
 
@@ -55,7 +55,7 @@ class authController {
             const token = generateAccessToken(user.id);
             return res.json({token});
         } catch (e) {
-            res.status(400).json({message: 'Login error'});
+            res.status(500).json({status: false, message: e});
         }
     }
 
@@ -72,7 +72,7 @@ class authController {
                 }})
         } catch (e) {
             console.log(e);
-            res.status(400).json({message: 'Me error'});
+            res.status(500).json({status: false, message: 'Me error'});
         }
     }
 
