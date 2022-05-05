@@ -83,7 +83,6 @@ Authorization : "bearer `your_token`"
 
 request ANY FIELDS in body
 ```js
-    id: Integer,
     email: String,
     firstName: String,
     lastName:  String,
