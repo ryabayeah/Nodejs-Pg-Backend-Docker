@@ -8,7 +8,7 @@ const authRouter  = require('./routes/authRouter');
 const storageRouter = require('./routes/storageRouter')
 const corsMiddleware = require('./middleware/corsMiddleware');
 const fileUpload = require("express-fileupload");
-
+const db = require('./models/database')
 
 app.use(fileUpload({}));
 app.use(corsMiddleware);
@@ -32,5 +32,8 @@ const start = async () => {
         console.log(e);
     }
 }
+
+
+db.sequelize.sync();
 
 start()
