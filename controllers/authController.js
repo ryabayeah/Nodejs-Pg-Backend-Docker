@@ -65,6 +65,7 @@ class authController {
             res.json({
                 status: true,
                 data: {
+                    id: user.id,
                     email: user.email,
                     firstName: user.firstName,
                     lastName: user.lastName,
