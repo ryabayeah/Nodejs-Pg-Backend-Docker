@@ -7,9 +7,9 @@ module.exports = {
         photo: "2",
         file:  "3"
     },
-    host: "83.166.240.93",
+    host: "",
     port: 5435,
-    username: "postgres",
-    password: "m0JnfdMro340rmfsaf32rczad1",
-    db_name: "unix"
+    username: "",
+    password: "",
+    db_name: ""
 }
